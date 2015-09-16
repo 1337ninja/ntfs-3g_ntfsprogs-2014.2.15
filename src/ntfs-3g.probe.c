@@ -159,6 +159,8 @@ int main(int argc, char *argv[])
 	err = ntfs_open(opts.device);
 
 	free(opts.device);
+	/* Print exit code whether success(err=0) or failure(err>10). */ 
+	printf("%s: Exit Code is %d\n", EXEC_NAME, err);
 	if (err)
 		exit(err);
 	return (0);
